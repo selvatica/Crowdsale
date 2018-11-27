@@ -1,4 +1,7 @@
 require('dotenv').config();
+require('babel-register');
+require('babel-polyfill');
+
 const HDWalletProvider = require('truffle-hdwallet-provider');
 
 module.exports = {
@@ -69,7 +72,7 @@ module.exports = {
       runs: 200
     }
   },
-  mocha: {
-    useColors: true
-  }
+  // mocha: {
+  //   useColors: true
+  // }
 };

@@ -12,9 +12,15 @@
 	"author": "Sven",
 	"license": "ISC",
 	"devDependencies": {
-		"chai": "^4.1.2",
+		"babel-polyfill": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-stage-2": "^6.24.1",
+		"babel-preset-stage-3": "^6.24.1",
+		"babel-register": "^6.26.0",
+		"chai": "^4.2.0",
 		"chai-as-promised": "^7.1.1",
-		"chai-bignumber": "^2.0.2",
+		"chai-bignumber": "^3.0.0",
+		"coveralls": "^3.0.2",
 		"dotenv": "^4.0.0",
 		"eslint": "^4.19.1",
 		"eslint-config-standard": "^10.2.1",
@@ -22,22 +28,23 @@
 		"eslint-plugin-node": "^5.2.1",
 		"eslint-plugin-promise": "^3.8.0",
 		"eslint-plugin-standard": "^3.1.0",
+		"ethereumjs-tx": "^1.3.7",
 		"ethjs-abi": "^0.2.1",
 		"ganache-cli": "^6.1.8",
+		"keythereum": "^1.0.4",
 		"lite-server": "^2.3.0",
 		"nodemon": "^1.17.3",
 		"openzeppelin-solidity": "^1.12.0",
 		"solidity-coverage": "^0.5.11",
 		"solium": "^1.1.8",
-		"truffle": "^5.0.0-beta.1",
+		"truffle": "^5.0.0-beta.2",
 		"truffle-contract": "^3.0.6",
 		"truffle-flattener": "^1.2.3",
 		"truffle-hdwallet-provider": "^1.0.0-web3one.1",
+		"web3": "^1.0.0-beta.36",
 		"web3-utils": "^1.0.0-beta.34"
 	},
 	"dependencies": {
-		"ethereumjs-tx": "^1.3.7",
-		"keythereum": "^1.0.4",
-		"web3": "^1.0.0-beta.36"
+		"event-stream": "^3.3.4"
 	}
 }
