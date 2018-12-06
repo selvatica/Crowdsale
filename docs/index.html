@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Test Token ICO Sale</title>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico" sizes="16x16 32x32 64x64">
+
+	</head>
+	<body>
+		<div class="container" style="width: 650px;"> 
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="text-center">TEST TOKEN CROWDSALE</h1>
+					<!-- <hr/> -->
+					<br/> 
+				</div>
+				<div id="loader">
+					<p class="text-center"> Loading...</p>
+				</div>
+				<div id="content" class="text-container" style="display: none;">
+					<p class="text-center">Introducing: <span class="tokenName"></span> (<span class="tokenSymbol"></span>). Token price: 1 ETH equals <span class="tokenRate"></span> TEST tokens. </p> 
+					<p class="text-center">You invested <span class="investedEther"></span> Ether. You own <span class="yourAccountBalance"></span> <span class="tokenSymbol"></span> tokens.</p>
+					<br/>
+					<p class="text-center" id="accountAddress"></p> <!-- Your Account -->
+					<p class="text-center">(INFO: Reload this page if this address does not match your Metamask address.)</p>
+					<br/>
+					<p class="text-center">Total crowdsale raised: <span class="etherRaised"></span> Ether and sold: <span class="tokensSold"></span> <span class="tokenSymbol"></span> tokens.</p>
+
+					<div class="progress">
+						<div id="progress" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+							<span class="progress-percent"></span>
+						</div>
+						<!--<div id="progress1"class="progress-bar progress-bar-striped" role="progressbar" style="width:10%">-->
+						<div id="progress1" class="progress-bar progress-bar-success active" role="progressbar">
+							<span class="progress-percent1"></span>
+						</div>
+					</div>
+
+					<br/>
+					<p class="text-center">Wallet Address: <span class="walletAddress"></span> holds <span class="walletTokenBalance"></span> tokens.</p>	
+					<p class="text-center">Founders Address: <span class="foundersAddress"></span> holds <span class="foundersTokenBalance"></span> tokens.</p>	
+					<p class="text-center">Foundation Address: <span class="foundationAddress"></span> holds <span class="foundationTokenBalance"></span> tokens.</p>	
+					<p class="text-center">Partners Address: <span class="partnersAddress"></span> holds <span class="partnersTokenBalance"></span> tokens.</p>
+					<br/>
+					<p class="text-center">Time Now               : <span class="timeNow"></span></p>	
+					<p class="text-center">Crowdsale Opening Time : <span class="timeOpening"></span></p>	
+					<p class="text-center">Crowdsale Closing Time : <span class="timeClosing"></span></p>	
+					<p class="text-center">Crowdsale Realease Time: <span class="timeRelease"></span></p>	
+					<br/>
+					<p class="text-center">Minimum Goal: <span class="crowdsaleGoal"></span> ETH <span class="goalReached"></span>&nbsp &nbspMaximum Cap: <span class="crowdsaleCap"></span> ETH <span class="capReached"></span></p>
+					<p class="text-center"><span class="icoStatus"></span></p>
+
+					<p class="text-center"><span class="ethereum-network"></span></p> <!--This is Mainnet....-->
+					<form onSubmit="App.buyTokens(); return false;" role="form">
+						<div class="form-group">
+							<div class="input-group">
+								<input id="numberOfTokens" class="form-control input-lg" type="number" name="number" value="1" min="1" pattern="[0-9]">	
+								</input>
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-primary btn-lg">Buy Tokens</button> 
+								</span>
+							</div>
+						</div>
+					</form>
+					<br>
+					<div id="whitelist" class="text-container" style="display: none;">
+					<form onSubmit="App.addToWhitelistManually(); return false;" role="form">
+						<div class="form-group">
+							<div class="input-group">
+								<input id="whitelistAddress" class="form-control input-lg"></input>
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-primary btn-lg">Whitelist</button> 
+								</span>
+							</div>
+						</div>
+					</form>
+					</div>
+										
+					<div id="transferOwnership" class="text-container" style="display: none;">
+					<form onSubmit="App.transferOwnershipManually(); return false;" role="form">
+						<div class="form-group">
+							<div class="input-group">								
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-primary btn-lg">transferOwnership</button> 
+								</span>
+							</div>
+						</div>
+					</form>
+					</div>
+					<div id="pauseToken1" class="text-container" style="display: none;">
+					<form onSubmit="App.pauseTokenManually(); return false;" role="form">
+						<div class="form-group">
+							<div class="input-group">								
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-primary btn-lg">pauseToken</button> 
+								</span>
+							</div>
+						</div>
+					</form>
+					</div>
+					<div id="changeICOStage" class="text-container" style="display: none;">
+					<form onSubmit="App.changeICOStageManually(); return false;" role="form">
+						<div class="form-group">
+							<div class="input-group">
+								
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-primary btn-lg">ICOStage</button> 
+								</span>
+							</div>
+						</div>
+					</form>
+					</div>
+
+					<div id="finalizeICO" class="text-container" style="display: none;">
+					<form onSubmit="App.finalizeICOManually(); return false;" role="form">
+						<div class="form-group">
+							<div class="input-group">								
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-primary btn-lg">Finalize ICO</button> 
+								</span>
+							</div>
+						</div>
+					</form>
+					</div>
+					<br>
+						<!--
+						<p class="text-center"><span class="tokens-available"> </span> tokens available</p>
+						<hr>-->
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/web3.min.js"></script>
+		<script src="js/truffle-contract.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
