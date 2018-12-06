@@ -26,18 +26,18 @@ module.exports = async function(deployer, network, accounts) {
 
 	const _rate 					= 500; //1 ETH = 500 Token (* 10 ** decimals)
 	
-	const _wallet 				=	'0xd3fF8838a81cDd6543ADa738D3676578bed6a520';		// GANACHE Account[0]
-	//const _wallet 				= '0xAE66178Df0FebB58A52080Fa775990d6E8d4D380';		//Metamask ICO_Wallet
+	//const _wallet 				=	'0xd3fF8838a81cDd6543ADa738D3676578bed6a520';		// GANACHE Account[0]
+	const _wallet 				= '0xAE66178Df0FebB58A52080Fa775990d6E8d4D380';		//Metamask ICO_Wallet
 
 	//const _foundersFund 	= accounts[4];				//IMPORTANT: MAKE SURE TO CHANGE THIS BEFORE DEPLOYING	
-	const _foundersFund 	= '0x3886198031cB7402FF5b052e516DdD3D02f05E54';		// GANACHE Account[4]
-	//const _foundersFund 	= '0xA43Eb6C07685e10715202d2C95EFcB853ea95d24'; 	//Metamask ICO_founders
+	//const _foundersFund 	= '0x3886198031cB7402FF5b052e516DdD3D02f05E54';		// GANACHE Account[4]
+	const _foundersFund 	= '0xA43Eb6C07685e10715202d2C95EFcB853ea95d24'; 	//Metamask ICO_founders
 
 	//const _foundationFund = accounts[5];				//IMPORTANT: MAKE SURE TO CHANGE THIS BEFORE DEPLOYING
-	const _foundationFund = '0x49dEde1b6034EBeBE6cd52AA558c305AfBB3863b';		// GANACHE Account[5]
-	//const _foundationFund = '0x1371E2795374C171E307B926CFA3D65201Ff4f57';		//Metamask ICO_foundation
+	//const _foundationFund = '0x49dEde1b6034EBeBE6cd52AA558c305AfBB3863b';		// GANACHE Account[5]
+	const _foundationFund = '0x1371E2795374C171E307B926CFA3D65201Ff4f57';		//Metamask ICO_foundation
 
-	const _partnersFund 	= '0x4cDeb12Df5C9d7ee8D8Cd67494ba9fA6e0fDF13c';	
+	const _partnersFund 	= '0x4cDeb12Df5C9d7ee8D8Cd67494ba9fA6e0fDF13c';	 //Mar...
 	//const _partnersFund 	= '0xCeF55B7CF1edB3C7FfEAC2678443460bFa36dbf6';		//Metamask ICO_partners
 
 	const _tokenAddress		= deployedToken.address; //Address of the token being sold
