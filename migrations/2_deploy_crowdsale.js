@@ -47,8 +47,8 @@ module.exports = async function(deployer, network, accounts) {
 	latestTime= latestTime/1000; //convert Milliseconds to seconds,because blockchain (getBlock.timestamp) is in seconds
 	
 	const _openingTime 		= latestTime + duration.minutes(1); 
-	const _closingTime 		= _openingTime + duration.minutes(30); // Test Crowdsale lasts 4 days
-	const _releaseTime 		= _closingTime + duration.minutes(15); // Test period of release time is 1 day
+	const _closingTime 		= _openingTime + duration.days(5); // Test Crowdsale lasts 4 days
+	const _releaseTime 		= _closingTime + duration.days(1); // Test period of release time is 1 day
 	const _goal 					= ether('50');
 
 	await deployer.deploy(TestTokenCrowdsale,
