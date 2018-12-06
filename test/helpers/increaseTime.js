@@ -1,28 +1,16 @@
-const { ethGetBlock } = require('../../node_modules/web3');
-
 // Returns the time of the last mined block in seconds
 async function latestTime () {
   const block = await web3.eth.getBlock('latest');
   return block.timestamp;
 }
-// export default function latestTime () {
-// 	var a;
-// 	web3.eth.getBlock('latest', function(e,res) { 	
-// 		a=res.timestamp;	
-// 	})
-// 	return a;
-  //return new web3.utils.BN(web3.eth.getBlock('latest').timestamp);
-  //console.log('Timestamp:', web3.eth.getBlock('latest').timestamp);
-  //return web3.eth.getBlock('latest').timestamp;
-  
-// }
 
 // Increases ganache time by the passed duration in seconds
 function increaseTime (duration) {
   const id = Date.now();
 
   return new Promise((resolve, reject) => {
-    web3.currentProvider.sendAsync({
+    //web3.currentProvider.sendAsync({
+   	web3.currentProvider.send({
       jsonrpc: '2.0',
       method: 'evm_increaseTime',
       params: [duration],
@@ -30,7 +18,8 @@ function increaseTime (duration) {
     }, err1 => {
       if (err1) return reject(err1);
 
-      web3.currentProvider.sendAsync({
+	web3.currentProvider.send({
+      // web3.currentProvider.sendAsync({
         jsonrpc: '2.0',
         method: 'evm_mine',
         id: id + 1,
